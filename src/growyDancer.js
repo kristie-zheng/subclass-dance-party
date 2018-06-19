@@ -6,6 +6,7 @@ var GrowyDancer = function(top, left, timeBetweenSteps) {
   //'this' is bound to spinnyDancer. spinnyDancer is subclassed from Dancer.
   Dancer.call(this, top, left, timeBetweenSteps)
   this.$node.addClass('growyDancer');
+  this.$node.append('<img class="growyDancer" src="https://data.whicdn.com/images/188853022/large.png"></img>')
   this.step();
 };
 
@@ -19,6 +20,9 @@ GrowyDancer.prototype.step = function() {
     // other effects you can use on a jQuery-wrapped html tag.
     // console.log('inside method' + JSON.stringify(this.$node))  
   Dancer.prototype.step.call(this)
+  $('.growyDancer').css('animation-name', 'example');
+ $('.growyDancer').css('animation-duration', '4s');
+ $('.growyDancer').css('animation-iteration-count', 'infinite');
   this.$node.css('animation-name', 'example');
   this.$node.css('animation-duration', '4s');
   this.$node.css('animation-iteration-count', 'infinite');

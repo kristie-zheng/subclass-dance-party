@@ -8,7 +8,7 @@ var BlinkyDancer = function(top, left, timeBetweenSteps) {
   // this.setPosition(top, left);
   // this.$node = $('<img src= https://artwithimpact.org/wp-content/uploads/gudetama.jpg></img>');
   // this.$node.css('background', 'url("https://artwithimpact.org/wp-content/uploads/gudetama.jpg")');
-  this.$node.append('<img src="https://artwithimpact.org/wp-content/uploads/gudetama.jpg" height=40% width=40%></img>')
+  this.$node.append('<img src="http://www.japantrends.com/japan-trends/wp-content/uploads/2015/10/gudetama-lazy-egg.png"></img>')
   // this.$node.css('height', '15%');
   // this.$node.css('width', '15%')
   this.step();
