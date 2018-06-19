@@ -3,8 +3,13 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+
+  background: no-repeat center center fixed;
+  background-size: cover;
+  background-image: url('http://worldartsme.com/images/cartoon-kitchen-clipart-1.jpg');
   font-size: 18px;
+  background-repeat: no-repeat;
+
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -29,8 +34,6 @@ img { /*max-height: 100px;
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
   position:absolute;
 /*  background: url('https://media.giphy.com/media/ZbBfdjFQ7f4nC/giphy.gif');
 */}
@@ -41,9 +44,24 @@ img { /*max-height: 100px;
 */}
 
 
+
+.flippyDancer {
+    -webkit-animation: rotation 2s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(359deg);
+    }
+}
+
+
 @keyframes example {
     from {width: 10px; height: 10px}
-    to {width: 20px; height: 20px}
+    to {width: 100px; height: 100px}
 }
 
 

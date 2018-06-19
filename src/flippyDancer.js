@@ -5,6 +5,8 @@ var ShakyDancer = function(top, left, timeBetweenSteps) {
 
   //'this' is bound to ShakyDancer. ShakyDancer is subclassed from Dancer.
   Dancer.call(this, top, left, timeBetweenSteps)
+  this.$node.addClass('flippyDancer');
+  this.$node.append('<img class="flippyDancer" src="https://bongkbong.files.wordpress.com/2017/04/tumblr_o2whg3ucq31uzh6soo1_500.png"></img>')
   this.step();
 };
 
@@ -18,12 +20,16 @@ ShakyDancer.prototype.step = function() {
     // other effects you can use on a jQuery-wrapped html tag.
     // console.log('inside method' + JSON.stringify(this.$node))  
   Dancer.prototype.step.call(this)
+  $('.flippyDancer').css('-webkit-animation', 'rotation 2s infinite linear')
+// .flippyDancer {
+//     -webkit-animation: rotation 2s infinite linear;
+// }
 
   // this.$node.css('animation-name', 'example');
-  this.$node.css('animation-name', 'shake')
-  this.$node.css('animation', 'shake', '0.5s');
-  this.$node.css('animation-iteration-count', 'infinite');
-  this.$node.toggle();
+
+  // this.$node.css('animation', 'shake');
+  // this.$node.css('animation-iteration-count', 'infinite');
+ // this.$node.toggle();
 
  };
 

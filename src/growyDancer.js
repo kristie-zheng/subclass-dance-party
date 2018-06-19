@@ -21,12 +21,8 @@ GrowyDancer.prototype.step = function() {
     // console.log('inside method' + JSON.stringify(this.$node))  
   Dancer.prototype.step.call(this)
   $('.growyDancer').css('animation-name', 'example');
- $('.growyDancer').css('animation-duration', '4s');
- $('.growyDancer').css('animation-iteration-count', 'infinite');
-  this.$node.css('animation-name', 'example');
-  this.$node.css('animation-duration', '4s');
-  this.$node.css('animation-iteration-count', 'infinite');
-
+  $('.growyDancer').css('animation-duration', '4s');
+  $('.growyDancer').css('animation-iteration-count', 'infinite');
 
  };
 
