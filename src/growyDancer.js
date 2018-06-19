@@ -5,6 +5,7 @@ var GrowyDancer = function(top, left, timeBetweenSteps) {
 
   //'this' is bound to spinnyDancer. spinnyDancer is subclassed from Dancer.
   Dancer.call(this, top, left, timeBetweenSteps)
+  this.$node.addClass('growyDancer');
   this.step();
 };
 

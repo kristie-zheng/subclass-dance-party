@@ -5,6 +5,12 @@ var BlinkyDancer = function(top, left, timeBetweenSteps) {
 
   //'this' is bound to BlinkyDancer. BlinkyDancer is subclassed from Dancer.
   Dancer.call(this, top, left, timeBetweenSteps)
+  // this.setPosition(top, left);
+  // this.$node = $('<img src= https://artwithimpact.org/wp-content/uploads/gudetama.jpg></img>');
+  // this.$node.css('background', 'url("https://artwithimpact.org/wp-content/uploads/gudetama.jpg")');
+  this.$node.append('<img src="https://artwithimpact.org/wp-content/uploads/gudetama.jpg" height=40% width=40%></img>')
+  // this.$node.css('height', '15%');
+  // this.$node.css('width', '15%')
   this.step();
 };
 
