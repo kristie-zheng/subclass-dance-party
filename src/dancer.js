@@ -2,6 +2,7 @@
 var Dancer = function(top, left, timeBetweenSteps) {
   // use jQuery to create an HTML <span> tag
   this.$node = $('<span class="dancer"></span>');
+  this.timeBetweenSteps = timeBetweenSteps;
 /*
 constructor
 input: 3 numbers representing top/left coordinates and ms delay
@@ -9,7 +10,9 @@ output: a new instance of Dancer at the coordinates and  that performs a step af
 delay ms
 constraints: none
 edge cases: none*/
- 
+console.log(this)
+console.log ('this is the setposition method', this.setPosition);
+  this.setPosition(top, left); 
 
   // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
   // this one sets the position to some random default point within the body
@@ -17,10 +20,11 @@ edge cases: none*/
 };
 
 
-  Dancer.prototype.step = function(timeBetweenSteps) {
+  Dancer.prototype.step = function() {
     // the basic dancer doesn't do anything interesting at all on each step,
     // it just schedules the next step
-    setTimeout(this.step, timeBetweenSteps);
+    console.log('this in the dancer file', this.step)
+    setTimeout(function(){this.step()}.bind(this), this.timeBetweenSteps);
   };
 /*
 input: number representing delay between steps
@@ -39,8 +43,7 @@ edge cases: none
     };
     this.$node.css(styleSettings);
   };
-//this.setPosition(top, left); 
-//this.step();
+
 /*
 input: numbers representing top and left coordinates
 output: none but places the "element" at the coordinates

@@ -5,30 +5,19 @@ var BlinkyDancer = function(top, left, timeBetweenSteps) {
 
   //'this' is bound to BlinkyDancer. BlinkyDancer is subclassed from Dancer.
   Dancer.call(this, top, left, timeBetweenSteps)
-//var oldStep = this.step;
-  // console.log(oldStep);
-  // console.log ("this refers to " + JSON.stringify(this) + "this.node refers to " + JSON.stringify(this.$node));
   this.step();
-  // this.$node = $('<span class="dancer"></span>');
- // console.log (' this is for node, ', this.$node)
-
 };
+
 BlinkyDancer.prototype = Object.create(Dancer.prototype);
 BlinkyDancer.prototype.constructor = BlinkyDancer;
-
-
 
 BlinkyDancer.prototype.step = function() {
     // call the old version of step at the beginning of any call to this new version of step
     // toggle() is a jQuery method to show/hide the <span> tag.
     // See http://api.jquery.com/category/effects/ for this and
     // other effects you can use on a jQuery-wrapped html tag.
-    // console.log('inside method' + JSON.stringify(this.$node))
-  console.log('prior to the .call', this);    
-Dancer.prototype.step.call(this)
-    //setTimeout(this.step, this.timeBetweenSteps) ;
- // console.log (this)
-// debugger;
+    // console.log('inside method' + JSON.stringify(this.$node))  
+  Dancer.prototype.step.call(this)
   this.$node.toggle();
  };
 
