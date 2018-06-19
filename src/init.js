@@ -37,7 +37,11 @@ $(document).ready(function() {
       var lineUp = function() {
         for (let i = 0; i < window.dancers.length; i++) {
           var eachDancer = window.dancers[i];
-          eachDancer.$node.css("border-color", "green");
+          var lineUpPosition = {
+            top: 200,
+            left: 50 * i
+          };
+          eachDancer.$node.css(lineUpPosition);
         }
       } 
       lineUp();
