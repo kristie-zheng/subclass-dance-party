@@ -8,6 +8,9 @@ var ShakyDancer = function(top, left, timeBetweenSteps) {
   this.$node.addClass('flippyDancer');
   this.$node.append('<img class="flippyDancer" src="https://bongkbong.files.wordpress.com/2017/04/tumblr_o2whg3ucq31uzh6soo1_500.png"></img>')
   this.step();
+  // this.$node.css('animation', 'rotation 2s linear 0s infinite')
+
+
 };
 
 ShakyDancer.prototype = Object.create(Dancer.prototype);
@@ -20,7 +23,7 @@ ShakyDancer.prototype.step = function() {
     // other effects you can use on a jQuery-wrapped html tag.
     // console.log('inside method' + JSON.stringify(this.$node))  
   Dancer.prototype.step.call(this)
-  $('.flippyDancer').css('-webkit-animation', 'rotation 2s infinite linear')
+  // $('.flippyDancer').css('animation', 'rotation 2s linear 0s infinite')
 // .flippyDancer {
 //     -webkit-animation: rotation 2s infinite linear;
 // }
@@ -34,29 +37,6 @@ ShakyDancer.prototype.step = function() {
  };
 
 /* 
-
-
-jQuery.fn.shake = function() {
-    this.each(function(i) {
-        $(this).css({ "position" : "relative" });
-        for (var x = 1; x <= 3; x++) {
-            $(this).animate({ left: -25 }, 10).animate({ left: 0 }, 50).animate({ left: 25 }, 10).animate({ left: 0 }, 50);
-        }
-    });
-    return this;
-}
-
-$("#entertext").click(function() {
-    $(this).shake();
-});
-
-
-
-
-
-
-
-
 
 converting functional to pseudoclassical
 

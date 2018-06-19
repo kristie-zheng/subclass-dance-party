@@ -46,7 +46,11 @@ img { /*max-height: 100px;
 
 
 .flippyDancer {
-    -webkit-animation: rotation 2s infinite linear;
+    animation: rotation 2s linear 0s infinite ;
+}
+
+.reverse {
+  animation: rotation 2s linear 0s infinite reverse;
 }
 
 @-webkit-keyframes rotation {

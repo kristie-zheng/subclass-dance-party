@@ -33,7 +33,7 @@ $(document).ready(function() {
 
   $('.addCommand').on('click', function() {
       var commandMaker = $(this).data('command-maker-function-name');
-      // var commandMakerFunction = window[commandMaker];
+      // var commandMakerFunction = w  indow[commandMaker];
       var lineUp = function() {
         for (let i = 0; i < window.dancers.length; i++) {
           var eachDancer = window.dancers[i];
@@ -47,5 +47,23 @@ $(document).ready(function() {
       lineUp();
       console.log(window.dancers);
     })
+
+  $('body').on('click', '.flippyDancer', function() {
+    // $('.flippyDancer').css('animation-direction', 'reverse')
+    $(this).addClass('reverse');
+    console.log('this is the button', this)
+
+  })
 });
+
+
+
+
+
+
+
+
+
+
+
 
