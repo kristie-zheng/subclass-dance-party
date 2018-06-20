@@ -86,7 +86,7 @@ img { /*max-height: 100px;
 }
 
 
-@keyframes example {
+@keyframes grow {
     from {width: 10px; height: 10px}
     to {width: 100px; height: 100px}
 }

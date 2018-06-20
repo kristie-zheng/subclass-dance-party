@@ -20,7 +20,7 @@ GrowyDancer.prototype.step = function() {
     // other effects you can use on a jQuery-wrapped html tag.
     // console.log('inside method' + JSON.stringify(this.$node))  
   Dancer.prototype.step.call(this)
-  $('.growyDancer').css('animation-name', 'example');
+  $('.growyDancer').css('animation-name', 'grow');
   $('.growyDancer').css('animation-duration', '4s');
   $('.growyDancer').css('animation-iteration-count', 'infinite');
 
