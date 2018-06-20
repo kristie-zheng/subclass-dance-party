@@ -80,18 +80,33 @@ describe('growyDancer', function() {
     });
   });
 
-/*
-  describe('interactiveDancer', function() {
 
+  describe('lineUp', function() {
+  beforeEach(function() {
+    clock = sinon.useFakeTimers();    
+  });
+  it('should cause the dancers to line up', function() {
+    var flippyDancer = new FlippyDancer(10, 20);
+    var growyDancer = new GrowyDancer(10, 20);      
+    lineUp();
+    expect(flippyDancer.top).to.equal(growyDancer.top);
+    });
+  })
+
+  describe('interactiveDancer', function() {
+  
   var interactiveDancer, clock;
   var timeBetweenSteps = 100;
 
   beforeEach(function() {
     clock = sinon.useFakeTimers();
-    interactiveDancer = new interactiveDancer(10, 20, timeBetweenSteps);
+    console.log(window.dancers)
+
   });
 
     it('should have a jQuery $node object', function() {
+    flippyDancer = new FlippyDancer(10, 20, timeBetweenSteps);
+    interactiveDancer = new InteractiveDancer(10, 20, timeBetweenSteps);
       expect(interactiveDancer.$node).to.be.an.instanceof(jQuery);
     });
   
@@ -99,6 +114,8 @@ describe('growyDancer', function() {
       expect((interactiveDancer.$node).hasClass('dancer')).to.be.true;
     });
     it('should call step at least once per second', function() {
+    flippyDancer = new FlippyDancer(10, 20, timeBetweenSteps);
+    interactiveDancer = new InteractiveDancer(10, 20, timeBetweenSteps);
       sinon.spy(interactiveDancer, 'step');
       expect(interactiveDancer.step.callCount).to.be.equal(0);
       clock.tick(timeBetweenSteps);
@@ -110,4 +127,4 @@ describe('growyDancer', function() {
     });
   });
 
-*/
+

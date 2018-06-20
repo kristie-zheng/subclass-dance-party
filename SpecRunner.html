@@ -7,6 +7,7 @@
   <script src="lib/mocha/mocha.js"></script>
   <script src="lib/chai/chai.js"></script>
   <script src="lib/sinon/sinon.js"></script>
+  
   <script>
     mocha.setup('bdd');
     window.expect = chai.expect;
@@ -14,11 +15,14 @@
       window.mochaPhantomJS ? mochaPhantomJS.run() : mocha.run();
     });
   </script>
+   <script src="src/init.js"></script>
   <script src="spec/blinkyDancerSpec.js"></script>
   <script src="src/dancer.js"></script>
   <script src="src/blinkyDancer.js"></script>
    <script src="src/growyDancer.js"></script>
  <script src="src/flippyDancer.js"></script>
+ <script src="src/commands.js"></script>
+
  <script src="src/interactiveDancer.js"></script>
 </head>
 <body>

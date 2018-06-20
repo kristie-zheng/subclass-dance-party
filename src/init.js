@@ -34,18 +34,18 @@ $(document).ready(function() {
   $('.addCommand').on('click', function() {
       var commandMaker = $(this).data('command-maker-function-name');
       // var commandMakerFunction = w  indow[commandMaker];
-      var lineUp = function() {
-        for (let i = 0; i < window.dancers.length; i++) {
-          var eachDancer = window.dancers[i];
-          var lineUpPosition = {
-            top: 450,
-            left: 120 * i
-          };
-          eachDancer.$node.css(lineUpPosition);
-        }
-      } 
+      // var lineUp = function() {
+      //   for (let i = 0; i < window.dancers.length; i++) {
+      //     var eachDancer = window.dancers[i];
+      //     var lineUpPosition = {
+      //       top: 450,
+      //       left: 120 * i
+      //     };
+      //     eachDancer.$node.css(lineUpPosition);
+      //   }
+      // } 
       lineUp();
-      console.log(window.dancers);
+      // console.log(window.dancers);
     })
 
   $('body').on('click', '.flippyDancer', function() {
