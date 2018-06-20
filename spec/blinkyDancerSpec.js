@@ -100,7 +100,6 @@ describe('growyDancer', function() {
 
   beforeEach(function() {
     clock = sinon.useFakeTimers();
-    console.log(window.dancers)
 
   });
 
