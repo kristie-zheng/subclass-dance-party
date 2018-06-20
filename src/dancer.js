@@ -5,30 +5,30 @@ var Dancer = function(top, left, timeBetweenSteps) {
   this.timeBetweenSteps = timeBetweenSteps;
   this.top = top;
   this.left = left;
-  
-/*
-constructor
-input: 3 numbers representing top/left coordinates and ms delay
-output: a new instance of Dancer at the coordinates and  that performs a step after
-delay ms
-constraints: none
-edge cases: none*/
-
   this.setPosition(top, left); 
+};
+  
+  /*
+  constructor
+  input: 3 numbers representing top/left coordinates and ms delay
+  output: a new instance of Dancer at the coordinates and  that performs a step after
+  delay ms
+  constraints: none
+  edge cases: none*/
+
 
   // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
   // this one sets the position to some random default point within the body
   
-};
 
 
   Dancer.prototype.step = function() {
-    // the basic dancer doesn't do anything interesting at all on each step,
-    // it just schedules the next step
-    // console.log('this in the dancer file', this.step)
-    
     setTimeout(function(){this.step()}.bind(this), this.timeBetweenSteps);
   };
+  
+// the basic dancer doesn't do anything interesting at all on each step,
+// it just schedules the next step
+// console.log('this in the dancer file', this.step)
 /*
 input: number representing delay between steps
 output: none, but executes the setTimeout 
@@ -37,24 +37,21 @@ edge cases: none
 */
 
  Dancer.prototype.setPosition = function(top, left) {
-    // Use css top and left properties to position our <span> tag
-    // where it belongs on the page. See http://api.jquery.com/css/
-    //
-    var styleSettings = {
-      top: top,
-      left: left
-    };
+  var styleSettings = {
+    top: top,
+    left: left
+  };
     this.$node.css(styleSettings);
   };
 
 /*
+Use css top and left properties to position our <span> tag
+where it belongs on the page. See http://api.jquery.com/css/
 input: numbers representing top and left coordinates
 output: none but places the "element" at the coordinates
 constraints: needs to be within dancefloor's bounds
 edge cases: if coordinates are same as previous, no movement
 */
-
-
 
 /*
 converting functional to pseudoclassical

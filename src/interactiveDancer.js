@@ -4,14 +4,13 @@ var InteractiveDancer = function(top, left, timeBetweenSteps) {
   // so we must keep a copy of the old version of this function
 
   //'this' is bound to BlinkyDancer. BlinkyDancer is subclassed from Dancer.
-if( !window.dancers.length === 0){
-var randomVal = Math.floor((Math.random() * window.dancers.length));
-  dancerToFollow = (window.dancers[randomVal]); 
-  console.log('this is the log', dancerToFollow)
-  top = dancerToFollow.top;
-  left = dancerToFollow.left + 100;
-}
-Dancer.call(this, top, left, timeBetweenSteps)
+  if (window.dancers.length !== 0) {
+    var randomVal = Math.floor((Math.random() * window.dancers.length));
+    dancerToFollow = (window.dancers[randomVal]); 
+    top = dancerToFollow.top;
+    left = dancerToFollow.left + 100;
+  }
+  Dancer.call(this, top, left, timeBetweenSteps);
   this.$node.addClass('interactiveDancer');
   this.$node.append('<img class="interactiveDancer" src="https://2.bp.blogspot.com/-8Cy2vEWRzZo/WPVrt8CKY_I/AAAAAAAOm_k/Vk0OY4zMl50fNdcssB61euVdx63tIR8GgCLcB/s1600/AS002524_03.gif"></img>')
   this.step();
@@ -21,12 +20,12 @@ InteractiveDancer.prototype = Object.create(Dancer.prototype);
 InteractiveDancer.prototype.constructor = InteractiveDancer;
 
 InteractiveDancer.prototype.step = function() {
-    // call the old version of step at the beginning of any call to this new version of step
-    // toggle() is a jQuery method to show/hide the <span> tag.
-    // See http://api.jquery.com/category/effects/ for this and
-    // other effects you can use on a jQuery-wrapped html tag.
-    // console.log('inside method' + JSON.stringify(this.$node))  
-  Dancer.prototype.step.call(this)
+// call the old version of step at the beginning of any call to this new version of step
+// toggle() is a jQuery method to show/hide the <span> tag.
+// See http://api.jquery.com/category/effects/ for this and
+// other effects you can use on a jQuery-wrapped html tag.
+// console.log('inside method' + JSON.stringify(this.$node))  
+  Dancer.prototype.step.call(this);
   $('.interactiveDancer').css('animation-name', 'shifty');
   $('.interactiveDancer').css('animation-duration', '4s');
   $('.interactiveDancer').css('animation-iteration-count', 'infinite');
@@ -36,8 +35,7 @@ InteractiveDancer.prototype.step = function() {
   // keyframes.insertRule("0% { -webkit-transform: rotate("+randomFromTo(-360,360)+"deg); }");
   // $('.interactiveDancer').css('animation-direction', 'reverse');
 
-
- };
+};
 
 /* 
 converting functional to pseudoclassical

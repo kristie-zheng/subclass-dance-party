@@ -4,7 +4,7 @@ var BlinkyDancer = function(top, left, timeBetweenSteps) {
   // so we must keep a copy of the old version of this function
 
   //'this' is bound to BlinkyDancer. BlinkyDancer is subclassed from Dancer.
-  Dancer.call(this, top, left, timeBetweenSteps)
+  Dancer.call(this, top, left, timeBetweenSteps);
   this.$node.append('<img src="http://www.japantrends.com/japan-trends/wp-content/uploads/2015/10/gudetama-lazy-egg.png"></img>')
   this.step();
 };
@@ -18,7 +18,7 @@ BlinkyDancer.prototype.step = function() {
     // See http://api.jquery.com/category/effects/ for this and
     // other effects you can use on a jQuery-wrapped html tag.
     // console.log('inside method' + JSON.stringify(this.$node))  
-  Dancer.prototype.step.call(this)
+  Dancer.prototype.step.call(this);
   this.$node.toggle();
  };
 
