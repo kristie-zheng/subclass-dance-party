@@ -43,7 +43,9 @@ img { /*max-height: 100px;
 /*  background: url('https://media.giphy.com/media/ZbBfdjFQ7f4nC/giphy.gif');
 */}
 
+.interactiveDancer {
 
+}
 
 .flippyDancer {
     animation: rotation 2s linear 0s infinite ;
@@ -60,6 +62,13 @@ img { /*max-height: 100px;
     to {
         -webkit-transform: rotate(359deg);
     }
+}
+
+@keyframes move {
+  100% { 
+    motion-offset: 100%;
+    offset-distance: 100%;
+  }
 }
 
 
