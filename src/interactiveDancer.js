@@ -20,26 +20,20 @@ InteractiveDancer.prototype = Object.create(Dancer.prototype);
 InteractiveDancer.prototype.constructor = InteractiveDancer;
 
 InteractiveDancer.prototype.step = function() {
+  Dancer.prototype.step.call(this);
+  $('.interactiveDancer').css('animation-name', 'shifty');
+  $('.interactiveDancer').css('animation-duration', '4s');
+  $('.interactiveDancer').css('animation-iteration-count', 'infinite');
+};
+
 // call the old version of step at the beginning of any call to this new version of step
 // toggle() is a jQuery method to show/hide the <span> tag.
 // See http://api.jquery.com/category/effects/ for this and
 // other effects you can use on a jQuery-wrapped html tag.
 // console.log('inside method' + JSON.stringify(this.$node))  
-  Dancer.prototype.step.call(this);
-  $('.interactiveDancer').css('animation-name', 'shifty');
-  $('.interactiveDancer').css('animation-duration', '4s');
-  $('.interactiveDancer').css('animation-iteration-count', 'infinite');
-  // keyframes.appendRule("0% { top }");
-
-// keyframes.appendRule("0% { -webkit-transform: rotate(" + randomFromTo(-360,360) + "deg); }");
-  // keyframes.insertRule("0% { -webkit-transform: rotate("+randomFromTo(-360,360)+"deg); }");
-  // $('.interactiveDancer').css('animation-direction', 'reverse');
-
-};
 
 /* 
 converting functional to pseudoclassical
-
 methods need ot be outside constructor body
 methods stored on the class' prototype
 no explicit return statement
