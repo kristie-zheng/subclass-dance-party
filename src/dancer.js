@@ -3,6 +3,9 @@ var Dancer = function(top, left, timeBetweenSteps) {
   // use jQuery to create an HTML <span> tag
   this.$node = $('<span class="dancer"></span>');
   this.timeBetweenSteps = timeBetweenSteps;
+  this.top = top;
+  this.left = left;
+  
 /*
 constructor
 input: 3 numbers representing top/left coordinates and ms delay
@@ -10,8 +13,7 @@ output: a new instance of Dancer at the coordinates and  that performs a step af
 delay ms
 constraints: none
 edge cases: none*/
-// console.log(this)
-// console.log ('this is the setposition method', this.setPosition);
+
   this.setPosition(top, left); 
 
   // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
@@ -24,6 +26,7 @@ edge cases: none*/
     // the basic dancer doesn't do anything interesting at all on each step,
     // it just schedules the next step
     // console.log('this in the dancer file', this.step)
+    
     setTimeout(function(){this.step()}.bind(this), this.timeBetweenSteps);
   };
 /*

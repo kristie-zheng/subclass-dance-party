@@ -4,16 +4,16 @@ var InteractiveDancer = function(top, left, timeBetweenSteps) {
   // so we must keep a copy of the old version of this function
 
   //'this' is bound to BlinkyDancer. BlinkyDancer is subclassed from Dancer.
-  Dancer.call(this, top, left, timeBetweenSteps)
-  this.$node.addClass('interactiveDancer');
-  this.$node.append('<img class="interactiveDancer" src="http://www.japantrends.com/japan-trends/wp-content/uploads/2015/10/gudetama-lazy-egg.png"></img>')
-  this.step();
+var randomVal = Math.floor((Math.random() * window.dancers.length));
+dancerToFollow = (window.dancers[randomVal]); 
+console.log(dancerToFollow)
+top = dancerToFollow.top;
+left = dancerToFollow.left + 100;
 
-  // this.setPosition(top, left);
-  // this.$node = $('<img src= https://artwithimpact.org/wp-content/uploads/gudetama.jpg></img>');
-  // this.$node.css('background', 'url("https://artwithimpact.org/wp-content/uploads/gudetama.jpg")');
-  // this.$node.css('height', '15%');
-  // this.$node.css('width', '15%')
+Dancer.call(this, top, left, timeBetweenSteps)
+  this.$node.addClass('interactiveDancer');
+  this.$node.append('<img class="interactiveDancer" src="https://2.bp.blogspot.com/-8Cy2vEWRzZo/WPVrt8CKY_I/AAAAAAAOm_k/Vk0OY4zMl50fNdcssB61euVdx63tIR8GgCLcB/s1600/AS002524_03.gif"></img>')
+  this.step();
 };
 
 InteractiveDancer.prototype = Object.create(Dancer.prototype);
@@ -26,10 +26,14 @@ InteractiveDancer.prototype.step = function() {
     // other effects you can use on a jQuery-wrapped html tag.
     // console.log('inside method' + JSON.stringify(this.$node))  
   Dancer.prototype.step.call(this)
-  $('.interactiveDancer').css('animation-name', 'example');
+  $('.interactiveDancer').css('animation-name', 'shifty');
   $('.interactiveDancer').css('animation-duration', '4s');
   $('.interactiveDancer').css('animation-iteration-count', 'infinite');
-  $('.interactiveDancer').css('animation-direction', 'reverse');
+  // keyframes.appendRule("0% { top }");
+
+// keyframes.appendRule("0% { -webkit-transform: rotate(" + randomFromTo(-360,360) + "deg); }");
+  // keyframes.insertRule("0% { -webkit-transform: rotate("+randomFromTo(-360,360)+"deg); }");
+  // $('.interactiveDancer').css('animation-direction', 'reverse');
 
 
  };

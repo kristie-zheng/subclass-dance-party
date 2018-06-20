@@ -55,12 +55,26 @@ img { /*max-height: 100px;
   animation: rotation 2s linear 0s infinite reverse;
 }
 
-@-webkit-keyframes rotation {
+@keyframes shifty {
+/*    0%   {left: 0px; top: 0px;}
+    50%  {left: 200px; top: 0px;}
+    100% {left: 0px; top: 0px;}
+*/
+  from {
+        left: 0px;
+       }
+  to {  left: 200px;
+   }
+}
+
+
+
+@keyframes rotation {
     from {
-        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     to {
-        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
     }
 }
 

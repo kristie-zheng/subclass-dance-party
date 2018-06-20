@@ -27,15 +27,6 @@ GrowyDancer.prototype.step = function() {
  };
 
 /* 
-
-in the node's css
-  animation-name: example;
-    animation-duration: 4s;
-@keyframes example {
-    from {width: 100px; height: 100px}
-    to {width: 200px; height: 200px}
-}
-
 converting functional to pseudoclassical
 
 methods need ot be outside constructor body

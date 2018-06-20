@@ -8,8 +8,6 @@ var ShakyDancer = function(top, left, timeBetweenSteps) {
   this.$node.addClass('flippyDancer');
   this.$node.append('<img class="flippyDancer" src="https://bongkbong.files.wordpress.com/2017/04/tumblr_o2whg3ucq31uzh6soo1_500.png"></img>')
   this.step();
-  // this.$node.css('animation', 'rotation 2s linear 0s infinite')
-
 
 };
 
@@ -23,17 +21,6 @@ ShakyDancer.prototype.step = function() {
     // other effects you can use on a jQuery-wrapped html tag.
     // console.log('inside method' + JSON.stringify(this.$node))  
   Dancer.prototype.step.call(this)
-  // $('.flippyDancer').css('animation', 'rotation 2s linear 0s infinite')
-// .flippyDancer {
-//     -webkit-animation: rotation 2s infinite linear;
-// }
-
-  // this.$node.css('animation-name', 'example');
-
-  // this.$node.css('animation', 'shake');
-  // this.$node.css('animation-iteration-count', 'infinite');
- // this.$node.toggle();
-
  };
 
 /* 
